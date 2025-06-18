@@ -1,10 +1,13 @@
 import pandas as pd
 from sqlalchemy import create_engine
 import getpass
+import streamlit as st
 
-# PostgreSQL connection string using local user and default port
-DB_URL = f"postgresql://{getpass.getuser()}@localhost:5432/healthdb"
-engine = create_engine(DB_URL)
+
+DATABASE_URL = st.secrets["DATABASE_URL"]  # You’ll set this in Streamlit Cloud
+
+engine = create_engine(DATABASE_URL)
+
 
 def upload_csv_to_db(data, table_name="patients", if_exists="append"):
     """
