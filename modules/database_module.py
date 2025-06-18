@@ -4,9 +4,9 @@ import getpass
 import streamlit as st
 
 
-DATABASE_URL = st.secrets["DATABASE_URL"]  # You’ll set this in Streamlit Cloud
-
+DATABASE_URL = st.secrets["database"]["url"]
 engine = create_engine(DATABASE_URL)
+
 
 
 def upload_csv_to_db(data, table_name="patients", if_exists="append"):
