@@ -1,6 +1,8 @@
-pandas
 streamlit
+pandas
 scikit-learn
-joblib
 psycopg2-binary
-SQLAlchemy
+sqlalchemy
+seaborn
+matplotlib
+plotly
